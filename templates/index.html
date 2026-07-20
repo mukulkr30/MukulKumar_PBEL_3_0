@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Prediction</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎓 Student Performance Prediction</h1>
+
+    <p class="subtitle">
+        Enter the student's academic details to predict whether the student will pass.
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <div class="input-group">
+            <label>Study Hours per Week</label>
+            <input type="number"
+                   name="study_hours"
+                   step="0.1"
+                   placeholder="e.g. 18.5"
+                   required>
+        </div>
+
+        <div class="input-group">
+            <label>Attendance Rate (%)</label>
+            <input type="number"
+                   name="attendance"
+                   step="0.1"
+                   placeholder="e.g. 92"
+                   required>
+        </div>
+
+        <div class="input-group">
+            <label>Previous Grades (%)</label>
+            <input type="number"
+                   name="grades"
+                   step="0.1"
+                   placeholder="e.g. 81"
+                   required>
+        </div>
+
+        <div class="input-group">
+            <label>Participation in Extracurricular Activities</label>
+
+            <select name="extra" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Parent Education Level</label>
+
+            <select name="education" required>
+                <option value="">Select</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Doctorate">Doctorate</option>
+                <option value="High School">High School</option>
+                <option value="Master">Master</option>
+            </select>
+        </div>
+
+        <button type="submit">
+            Predict Performance
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

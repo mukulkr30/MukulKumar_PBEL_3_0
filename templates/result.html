@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prediction Result</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Prediction Results</h1>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Machine Learning Model</th>
+
+<th>Prediction</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for model,pred in result.items() %}
+
+<tr>
+
+<td>{{ model }}</td>
+
+<td>
+
+{% if pred==1 or pred=="Yes" %}
+
+<span class="pass">PASS ✅</span>
+
+{% else %}
+
+<span class="fail">FAIL ❌</span>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+<a href="/" class="btn">
+Predict Another Student
+</a>
+
+</div>
+
+</body>
+
+</html>
